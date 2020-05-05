@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js"
-  }, 
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/philani26/Developer-social-network.git"
@@ -21,6 +21,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.12",
     "passport": "^0.4.1",

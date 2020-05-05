@@ -1,12 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const bodyParser = require('body-parser')
 
 const users = require('./routers/api/users')
 const posts = require('./routers/api/posts')
 const profile = require('./routers/api/profile')
 
 const app = express();
+
+//MiddleWare
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json())
 //DB Config
 const db = require('./Config/keys').mongoURL
 //Connect to MongoDB
