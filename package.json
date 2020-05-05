@@ -1,0 +1,33 @@
+{
+  "name": "developer-social-network",
+  "version": "1.0.0",
+  "description": "Developer social network",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  }, 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philani26/Developer-social-network.git"
+  },
+  "author": "Bazil Philani Gumede",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philani26/Developer-social-network/issues"
+  },
+  "homepage": "https://github.com/philani26/Developer-social-network#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.12",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
