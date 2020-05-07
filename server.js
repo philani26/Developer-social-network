@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
+const passport = require('passport')
+
+
 
 const users = require('./routers/api/users')
 const posts = require('./routers/api/posts')
@@ -9,15 +12,19 @@ const profile = require('./routers/api/profile')
 const app = express();
 
 //MiddleWare
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 //DB Config
 const db = require('./Config/keys').mongoURL
 //Connect to MongoDB
-mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true }).then(()=> console.log('MongoDB is Connected')).catch((err)=> console.log(err));
+mongoose.connect('mongodb://localhost/devmeetup',{ useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify:false }).then(()=> console.log('MongoDB is Connected')).catch((err)=> console.log(err));
 
+// Passport Middleware
+app.use(passport.initialize());
 
-app.get('/', (req, res)=> console.log('hello'));
+//Passport Config
+require('./Config/passport')(passport);
+
 
 
 //Roure middleware
